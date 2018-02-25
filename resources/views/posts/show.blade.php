@@ -13,6 +13,10 @@
       <small class="text-muted">{{ humanize_date($post->posted_at) }}</small>
     </div>
 
+    <div class="excerpt">
+      {{ $post->excerpt }}
+    </div>
+
     <div class="post-content">
       {!! $post->content !!}
     </div>

@@ -20,6 +20,7 @@ return [
 
   'attributes' => [
     'title' => 'Title',
+    'excerpt' => 'Excerpt',
     'content' => 'Content',
     'author' => 'Author',
     'thumbnail' => 'Post picture',

@@ -42,8 +42,17 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('excerpt', __('posts.attributes.excerpt')) !!}
+    {!! Form::textarea('excerpt', null, ['rows' => 4, 'class' => 'form-control' . ($errors->has('excerpt') ? ' is-invalid' : ''), 'required' => 'required']) !!}
+
+    @if ($errors->has('excerpt'))
+        <span class="invalid-feedback">{{ $errors->first('excerpt') }}</span>
+    @endif
+</div>
+
+<div class="form-group">
     {!! Form::label('content', __('posts.attributes.content')) !!}
-    {!! Form::textarea('content', null, ['class' => 'form-control trumbowyg-form' . ($errors->has('content') ? ' is-invalid' : ''), 'required' => 'required']) !!}
+    {!! Form::textarea('content', null, ['class' => 'form-control trumbowyg-form' . ($errors->has('content') ? ' is-invalid' : '')]) !!}
 
     @if ($errors->has('content'))
         <span class="invalid-feedback">{{ $errors->first('content') }}</span>

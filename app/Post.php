@@ -20,6 +20,7 @@ class Post extends Model
     protected $fillable = [
         'author_id',
         'title',
+        'excerpt',
         'content',
         'posted_at',
         'thumbnail_id',
@@ -165,16 +166,5 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
-    }
-
-    /**
-     * return the excerpt of the post content
-     *
-     * @param  $length
-     * @return string
-     */
-    public function excerpt($length = 50): string
-    {
-        return str_limit($this->content, $length);
     }
 }
