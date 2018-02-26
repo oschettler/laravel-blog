@@ -20,6 +20,7 @@ class Post extends Model
     protected $fillable = [
         'author_id',
         'title',
+        'redirect_url',
         'excerpt',
         'content',
         'posted_at',

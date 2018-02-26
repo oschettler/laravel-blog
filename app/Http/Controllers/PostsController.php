@@ -19,7 +19,7 @@ class PostsController extends Controller
                              ->with('author', 'media')
                              ->withCount('comments', 'likes')
                              ->latest()
-                             ->paginate(20)
+                             ->paginate(10)
         ]);
     }
 
@@ -28,6 +28,14 @@ class PostsController extends Controller
      */
     public function show(Request $request, Post $post)
     {
+        if (!empty($post->redirect_url)) {
+            $url = $post->redirect_url;
+            if (!preg_match('#^http(s?)://#', $url)) {
+                $url = config('app.prod_url') . $url;
+            }
+            return redirect($url);
+        }
+
         $post->comments_count = $post->comments()->count();
         $post->likes_count = $post->likes()->count();
 

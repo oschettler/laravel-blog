@@ -6,7 +6,7 @@ return [
   'delete' => 'Delete',
   'delete_thumbnail' => "Delete the picture",
   'edit' => 'Edit',
-  'last_posts' => 'Latest posts',
+  'last_posts' => 'Neueste Beiträge',
   'create' => 'Create post',
   'created' => 'Post created',
   'updated' => 'Post updated',
@@ -21,6 +21,7 @@ return [
   'attributes' => [
     'title' => 'Title',
     'excerpt' => 'Anreißer',
+    'redirect_url' => 'Redirect-URL',
     'content' => 'Content',
     'author' => 'Author',
     'thumbnail' => 'Post picture',

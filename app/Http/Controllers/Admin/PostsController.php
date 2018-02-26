@@ -52,7 +52,7 @@ class PostsController extends Controller
      */
     public function store(PostsRequest $request)
     {
-        $post = Post::create($request->only(['title', 'excerpt', 'content', 'posted_at', 'author_id']));
+        $post = Post::create($request->only(['title', 'excerpt', 'redirect_url', 'content', 'posted_at', 'author_id']));
 
         if ($request->hasFile('thumbnail')) {
             $post->storeAndSetThumbnail($request->file('thumbnail'));
@@ -66,7 +66,7 @@ class PostsController extends Controller
      */
     public function update(PostsRequest $request, Post $post)
     {
-        $post->update($request->only(['title', 'excerpt', 'content', 'posted_at', 'author_id']));
+        $post->update($request->only(['title', 'excerpt', 'redirect_url', 'content', 'posted_at', 'author_id']));
 
         if ($request->hasFile('thumbnail')) {
             $post->storeAndSetThumbnail($request->file('thumbnail'));

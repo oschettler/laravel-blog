@@ -11,6 +11,14 @@
     @endif
 </div>
 
+<div class="form-group">
+    {!! Form::label('redirect_url', __('posts.attributes.redirect_url')) !!}
+    {!! Form::text('redirect_url', null, ['class' => 'form-control' . ($errors->has('redirect_url') ? ' is-invalid' : '')]) !!}
+
+    @if ($errors->has('redirect_url'))
+        <span class="invalid-feedback">{{ $errors->first('redirect_url') }}</span>
+    @endif
+</div>
 
 <div class="form-row">
     <div class="form-group col-md-6">
